@@ -6,7 +6,7 @@ import {NavLink} from 'react-router-dom';
 
 function Category() {
   return (
-    <div>
+    <List>
         <div>
           <FaPizzaSlice />
           <h4>Italian</h4>
@@ -23,10 +23,15 @@ function Category() {
           <GiChopsticks />
           <h4>Japanese</h4>
         </div>
-    </div>
+    </List>
   )
 }
 
+const List = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0rem;
+`;
 
 
 export default Category

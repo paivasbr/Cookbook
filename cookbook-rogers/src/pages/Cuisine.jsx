@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
 
@@ -22,21 +22,28 @@ function Cuisine() {
     console.log(params.type);
   },[params.type]);
 
- return <Grid>
+ return ( 
+  <Grid
+    animate={{ opacity: 1 }}
+    initial={{ opacity: 0 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.5 }}
+  >
    {cuisine.map((item) => {
-     return(
+     return (
        <Card key={item.id}>
-         <Link to={'/recipe/' + item.id}>
+         <Link to={"/recipe/" + item.id}>
          <img src={item.image} alt="" />
          <h4>{item.title}</h4>
          </Link>
        </Card>
      );
    })}
- </Grid>;
+ </Grid>
+ );
 }
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
   display: grid;
   grid-template-colimns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;

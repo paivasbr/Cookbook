@@ -61,7 +61,7 @@ const SLink = styled(NavLink)`
         color: white;
       }
       h4{
-        color: white;
+        color:
       }
   }
 `;
